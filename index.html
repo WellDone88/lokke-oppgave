@@ -7,18 +7,32 @@
 </head>
 <body>
     
-<button onclick="ShowResultsAndStop()">click to show</button>
+<button onclick="ShowResultsAndStop()">Results</button>
 <div id="2times2"></div>
 
 <script>
-
+    //vi legger inn ekstra for å kunne lukke den :)
+    let listopen = false;
     function ShowResultsAndStop(){
-        let stopAt = 10;
-        for(let counter = 1; counter <= stopAt; counter = counter++ ){
+        let stopAt = 20;
+        if(listopen==false){
+            listopen = true;
+            for(let counter = 2; counter <=stopAt; counter = counter + 2){
+                document.getElementById('2times2').innerHTML +='<li>' + counter + '</li>';
 
+            }
         }
-        document.getElementById('2times2').innerHTML+= '<li>' + 1 +  '<li>';
+
+       else if(listopen==true){
+            listopen = false;
+            document.getElementById('2times2').innerHTML ='';
+
+            
+        }
+        
+        
     }
+    
 
 
 
